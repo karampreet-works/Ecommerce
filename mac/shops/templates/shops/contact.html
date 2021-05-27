@@ -1,0 +1,43 @@
+{% extends 'shops/basic.html' %}
+
+{% block title%}
+This is my  Contact Page
+{% endblock %}
+{% block body%}
+<div class="container my-4">
+
+<form action="/shop/contact/" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name"placeholder="Enter your name">
+  </div>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email"placeholder="name@example.com">
+  </div>
+
+    <div class="form-group">
+    <label for="phone">Number</label>
+    <input type="tel" class="form-control" id="phone" name="phone"placeholder="+91 1234567890">
+  </div>
+  <div class="form-group">
+    <label for="desc">Tell what you want to know ?</label>
+    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+  </div>
+
+    <button onclick="myFunction()" class="btn btn-success">Submit</button>
+</form>
+    </div>
+
+{% endblock %}
+
+{ % block js %}
+<script>
+  function myFunction()
+  {
+  alert(" You Have successful submiited the form . Our team will contant as soon as possible. "
+  }
+</script>
+{ % endblock %}
